@@ -1,0 +1,27 @@
+<%- include('layout/header.ejs') %>
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Update User</h2>
+                <form action="/user/update" method="post">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="Email" name="Email" placeholder="Email"  readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Name:</label>
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Name" value="<%= Data.Name %>"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">PassWord:</label>
+                        <input type="text" class="form-control" id="PassWord" name="PassWord" placeholder="PassWord" value="<%= Data.PassWord %>" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" >Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('layout/footer.ejs') %>

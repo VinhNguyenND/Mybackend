@@ -1,0 +1,21 @@
+<%- include('layout/header.ejs') %>
+<!-- <% if(Data){ %> -->
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <img src= <%=Data.image%>  class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=Data.name %></h5>
+                        <p class="card-text">Price: <%= Data.price %></p>
+                        <p class="card-text">Stock: <%= Data.stock %></p>
+                        <p class="card-text">Brand: <%= Data.brand %></p>
+                        <p class="card-text">Description:<%= Data.description %></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- <% } %> -->
+<%- include('layout/footer.ejs') %>

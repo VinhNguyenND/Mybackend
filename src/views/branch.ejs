@@ -1,0 +1,55 @@
+<%- include('layout/header.ejs') %>
+    <div class="container mt-4">
+        <h2 class="text-center">branch</h2>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>nguyenvana@example.com</td>
+                        <td>0123456789</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Trần Thị B</td>
+                        <td>tranthib@example.com</td>
+                        <td>0987654321</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Thêm các dòng khác tại đây -->
+                </tbody>
+            </table>
+            <div class="text-right mb-3">
+                <button type="button" class="btn btn-secondary">
+                    <i class="fa fa-plus"></i> Thêm User
+                </button>
+            </div>
+        </div>
+    </div>
+
+<%- include('layout/footer.ejs') %>

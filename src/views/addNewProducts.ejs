@@ -1,0 +1,38 @@
+<%- include('layout/header.ejs') %>
+  <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Add New Product</h2>
+                <form action="/product/post" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="brand">Brand:</label>
+                        <input type="text" class="form-control" id="brand" name="Brand" placeholder="Brand">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" id="description" name="Description" placeholder="Description">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="text" class="form-control" id="price" name="Price" placeholder="Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image:</label>
+                        <input type="text" class="form-control" id="image" name="Image" placeholder="Image URL">
+                    </div>
+                    <div class="form-group">
+                        <label for="stock">Stock:</label>
+                        <input type="text" class="form-control" id="stock" name="Stock" placeholder="Stock">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('layout/footer.ejs') %>

@@ -1,0 +1,96 @@
+<%- include('layout/header.ejs') %>
+<div class="container mt-4">
+  <% if(message ){ %>
+  <div
+    class="alert alert-dismissible fade show alert-<%= message.type %>"
+    role="alert"
+  >
+    <strong> <%= message.message %> </strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <% } %>
+  <h2 class="text-center">Product List</h2>
+  <div class="table-responsive">
+    <div class="text-right mb-3">
+      <a href="/addNewProducts">
+        <button type="button" class="btn btn-secondary">
+          <i class="fas fa-plus"></i> Add Product
+        </button>
+      </a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Stt</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Action</th>
+          <th>Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < products.length; i++) { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= products[i].name%></td>
+          <td><%= products[i].price %></td>
+          <td><%= products[i].stock %></td>
+          <td>
+            <a href="/UpdatePage/<%=products[i].name %>">
+              <button type="button" class="btn btn-primary btn-sm">
+                <i class="fa fa-edit"></i>
+              </button>
+            </a>
+            <a href="/DeletPage/<%= products[i].name %>">
+              <button type="button" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash"></i>
+              </button>
+            </a>
+          </td>
+          <td>
+            <a href="/detailPage/<%= products[i].name %>">
+              <button type="button" class="btn btn-info btn-sm">
+                <i class="fas fa-info-circle"></i>
+              </button>
+            </a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+  <% if (pages> 0) { %>
+  <ul class="pagination justify-content-center">
+    <% if (current==1) { %>
+    <li class="page-item disabled"><a class="page-link">First</a></li>
+    <% } else { %>
+    <li class="page-item">
+      <a class="page-link" href="/categoryPage/1">First</a>
+    </li>
+    <% } %> <% var i=(Number(current)> 5 ? Number(current) - 4 : 1) %> <% if (i
+    !==1) { %>
+    <li class="page-item disabled"><a class="page-link">...</a></li>
+    <% } %> <% for (; i <=(Number(current) + 4) && i <=pages; i++) { %> <% if
+    (i==current) { %>
+    <li class="page-item active"><span class="page-link"> <%= i %> </span></li>
+    <% } else { %>
+    <li class="page-item">
+      <a class="page-link" href="/categoryPage/<%= i %>"> <%= i %> </a>
+    </li>
+    <% } %> <% if (i==Number(current) + 4 && i < pages) { %>
+    <li class="page-item disabled"><span class="page-link">...</span></li>
+    <% } %> <% } %> <% if (current==pages) { %>
+    <li class="page-item disabled"><a class="page-link">Last</a></li>
+    <% } else { %>
+    <li class="page-item">
+      <a class="page-link" href="/categoryPage/<%= pages %>">Last</a>
+    </li>
+    <% } %>
+  </ul>
+  <% } %>
+</div>
+
+<%- include('layout/footer.ejs') %>
